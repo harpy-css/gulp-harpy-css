@@ -1,0 +1,24 @@
+{
+  "name": "gulp-harpy-css",
+  "version": "0.1.0",
+  "description": "Harpy CSS generator for gulp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/harpy-css/gulp-harpy-css.git"
+  },
+  "author": "Fredrik Johansson <jeanfredrik@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harpy-css/gulp-harpy-css/issues"
+  },
+  "homepage": "https://github.com/harpy-css/gulp-harpy-css#readme",
+  "dependencies": {
+    "gulp-util": "^3.0.7",
+    "harpy-css": "^0.2.0",
+    "through2": "^2.0.0"
+  }
+}
