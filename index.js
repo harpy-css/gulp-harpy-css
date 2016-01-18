@@ -16,16 +16,12 @@ module.exports = function(options) {
 		} else if(file.isBuffer()) {
 			var inputContent = file.contents.toString();
 			var vmContext = vm.createContext({
-				output: '',
-				harpyCss: harpyCss,
-				harpyCSS: harpyCss,
+				css: harpyCss.create(),
 			});
-			vm.runInContext('output = (function(){\n'+inputContent+'\n})()', vmContext, {
+			vm.runInContext(inputContent, vmContext, {
 				filename: file.path,
-				lineOffset: -1,
 			});
-			console.log(vmContext.output);
-			var outputContent = vmContext.output;
+			var outputContent = vmContext.css.stringify();
 
 			file.contents = new Buffer(outputContent);
 			file.path = gutil.replaceExtension(file.path, '.css');
