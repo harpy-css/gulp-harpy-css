@@ -26,7 +26,6 @@ module.exports = function(options) {
 			var vmContext;
 			var outputContent;
 			try {
-				console.log('hej');
 				vmContext = vm.createContext(Object.assign({
 					css: harpyCss.create(),
 					console: console,
