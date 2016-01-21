@@ -3,6 +3,12 @@ var through = require('through2');
 var gutil = require('gulp-util');
 var vm = require('vm');
 
+var formatNumber = function(number, digits) {
+	if(digits === undefined) digits = 6;
+	var precision = Math.pow(10, digits);
+	return Math.round(number * precision) / precision;
+};
+
 var PLUGIN_NAME = 'gulp-harpy-css';
 
 module.exports = function(options) {
@@ -24,6 +30,7 @@ module.exports = function(options) {
 				vmContext = vm.createContext(Object.assign({
 					css: harpyCss.create(),
 					console: console,
+					formatNumber: formatNumber,
 				}, options));
 				vm.runInContext(inputContent, vmContext, {
 					filename: file.path,
