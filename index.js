@@ -15,9 +15,10 @@ module.exports = function(options) {
 			this.emit('error', new PluginError(PLUGIN_NAME, 'Streams not supported!'));
 		} else if(file.isBuffer()) {
 			var inputContent = file.contents.toString();
-			var vmContext = vm.createContext({
+			var vmContext = vm.createContext(Object.assign({
 				css: harpyCss.create(),
-			});
+				console: console,
+			}, options));
 			vm.runInContext(inputContent, vmContext, {
 				filename: file.path,
 			});

@@ -1,6 +1,6 @@
 {
   "name": "gulp-harpy-css",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Harpy CSS generator for gulp",
   "main": "index.js",
   "scripts": {
