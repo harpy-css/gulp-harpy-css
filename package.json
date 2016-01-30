@@ -19,7 +19,7 @@
   "dependencies": {
     "color": "^0.11.1",
     "gulp-util": "^3.0.7",
-    "harpy-css": "^0.3.1",
+    "harpy-css": "^0.4.0",
     "lodash": "^4.1.0",
     "through2": "^2.0.0"
   }
