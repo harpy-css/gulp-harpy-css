@@ -81,7 +81,7 @@ css.add({
 The resulting CSS file:
 
 ```css
-.mtn,
+.mtm,
 .mvm {
 	margin-top: 1rem
 }
