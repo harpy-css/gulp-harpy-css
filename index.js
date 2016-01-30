@@ -2,6 +2,8 @@ var harpyCss = require('harpy-css');
 var through = require('through2');
 var gutil = require('gulp-util');
 var vm = require('vm');
+var _ = require('lodash');
+var color = require('color');
 
 var formatNumber = function(number, digits) {
 	if(digits === undefined) digits = 6;
@@ -30,6 +32,8 @@ module.exports = function(options) {
 					css: harpyCss.create(),
 					console: console,
 					formatNumber: formatNumber,
+					_: _,
+					color: color,
 				}, options));
 				vm.runInContext(inputContent, vmContext, {
 					filename: file.path,
